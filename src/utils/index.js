@@ -1,0 +1,1 @@
+// Funzioni utili e helper

@@ -1,0 +1,1 @@
+// Costanti utilizzate nell'applicazione
