@@ -1,229 +1,109 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
-  };
-
-  const services = [
-    'Pulizie Civili',
-    'Pulizie Uffici',
-    'Pulizie Negozi',
-    'Strutture Sanitarie',
-    'Post Restrutturazioni',
-    'Manutenzione Quotidiana'
+  const contacts = [
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      ),
+      color: 'bg-blue-100 text-blue-600',
+      label: 'Chiamaci ora',
+      value: '+39 334 222 1212',
+      href: 'tel:+393342221212',
+      cta: 'Chiama',
+      ctaClass: 'bg-blue-600 hover:bg-blue-700 text-white',
+      note: 'Lun–Dom, 08:00–20:00',
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      color: 'bg-green-100 text-green-600',
+      label: 'Scrivici via email',
+      value: 'info@ecosolutionsas.it',
+      href: 'mailto:info@ecosolutionsas.it',
+      cta: 'Scrivi',
+      ctaClass: 'bg-green-600 hover:bg-green-700 text-white',
+      note: 'Risposta entro 2 ore',
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+      color: 'bg-emerald-100 text-emerald-600',
+      label: 'WhatsApp',
+      value: '+39 334 222 1212',
+      href: 'https://wa.me/393342221212',
+      cta: 'Chatta',
+      ctaClass: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+      note: 'Risposta immediata',
+    },
   ];
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section id="contact" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contattaci</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Richiedi un preventivo gratuito o informazioni sui nostri servizi. Ti risponderemo entro 24 ore.
+
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Contatti</span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Parliamo del tuo progetto</h2>
+          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+            Preventivo gratuito in giornata. Nessun impegno, risposta rapida.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Card contatti */}
+        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
+          {contacts.map((c, i) => (
+            <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300 p-7 flex flex-col items-center text-center gap-4">
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${c.color}`}>
+                {c.icon}
+              </div>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
-                  Nome Completo *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="Es. Giovanni Rossi"
-                />
+                <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">{c.label}</p>
+                <p className="font-bold text-gray-900 text-base">{c.value}</p>
+                <p className="text-xs text-gray-400 mt-1">{c.note}</p>
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="es@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
-                  Telefono *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                  placeholder="+39 123 456 7890"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">
-                  Tipo di Servizio *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors"
-                >
-                  <option value="">Seleziona un servizio...</option>
-                  {services.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
-                  Messaggio
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="5"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-600 focus:outline-none transition-colors resize-none"
-                  placeholder="Descrivi le tue esigenze..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full btn-primary"
-              >
-                Invia Richiesta
-              </button>
-
-              {submitted && (
-                <div className="bg-green-50 border-2 border-green-200 text-green-700 p-4 rounded-lg text-center">
-                  ✓ Richiesta inviata con successo! Ti contatteremo presto.
-                </div>
-              )}
-            </form>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Informazioni di Contatto</h3>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0">
-                    📞
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Telefono</h4>
-                    <a href="tel:+39123456789" className="text-blue-600 hover:text-blue-700 font-medium">
-                      +39 123 456 7890
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0">
-                    ��
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <a href="mailto:info@ecosolution-milano.it" className="text-blue-600 hover:text-blue-700 font-medium">
-                      info@ecosolution-milano.it
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0">
-                    📍
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Indirizzo</h4>
-                    <p className="text-gray-600">
-                      Via Milano, 123<br />
-                      20100 Milano (MI)<br />
-                      Italia
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0">
-                    ⏰
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Orari</h4>
-                    <p className="text-gray-600">
-                      Disponibili 24/7<br />
-                      Incluso festivi e festività
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-8 text-white">
-              <h4 className="text-xl font-bold mb-4">Servizi d'Emergenza</h4>
-              <p className="mb-6 opacity-90">
-                Hai bisogno di un intervento urgente? Contattaci subito tramite telefono e faremo del nostro meglio per assisterti entro poche ore.
-              </p>
               <a
-                href="tel:+39123456789"
-                className="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors"
+                href={c.href}
+                target={c.href.startsWith('http') ? '_blank' : undefined}
+                rel="noopener noreferrer"
+                className={`w-full py-2.5 rounded-xl font-semibold text-sm transition-colors duration-200 ${c.ctaClass}`}
               >
-                Contatta d'Emergenza
+                {c.cta} →
               </a>
             </div>
-          </div>
+          ))}
         </div>
+
+        {/* Banner emergenze */}
+        <div className="max-w-4xl mx-auto bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="text-center sm:text-left">
+            <div className="flex items-center gap-2 justify-center sm:justify-start mb-2">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              <span className="text-green-400 text-xs font-semibold uppercase tracking-widest">Disponibili ora</span>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1">Hai un'emergenza?</h3>
+            <p className="text-gray-400 text-sm">Interveniamo in giornata, anche nel weekend e nei festivi.</p>
+          </div>
+          <a
+            href="tel:+393342221212"
+            className="flex-shrink-0 bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition-colors duration-200 text-sm whitespace-nowrap flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Chiama ora — +39 334 222 1212
+          </a>
+        </div>
+
       </div>
     </section>
   );

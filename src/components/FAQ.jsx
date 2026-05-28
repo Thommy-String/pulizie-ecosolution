@@ -39,11 +39,6 @@ export default function FAQ() {
       question: 'Come funziona il preventivo?',
       answer: 'Il preventivo è completamente gratuito. Un nostro specialista effettuerà una valutazione visiva del luogo o dialoga per comprendere le vostre esigenze, fornendo un preventivo trasparente senza costi nascosti.'
     },
-    {
-      id: 8,
-      question: 'Siete assicurati per eventuali danni?',
-      answer: 'Sì, siamo pienamente assicurati. Tutte le nostre operazioni sono coperte da polizze assicurative complete per garantire la massima tranquillità ai nostri clienti.'
-    },
   ];
 
   return (
@@ -91,7 +86,7 @@ export default function FAQ() {
           <h3 className="text-2xl font-bold text-gray-900 mb-3">Non trovi la risposta che cerchi?</h3>
           <p className="text-gray-600 mb-6">Contattaci direttamente, il nostro team è sempre disponibile per aiutarti.</p>
           <a
-            href="tel:+39123456789"
+            href="tel:+393342221212"
             className="btn-primary inline-block"
           >
             Chiamaci Ora
