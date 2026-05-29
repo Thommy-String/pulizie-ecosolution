@@ -15,38 +15,62 @@ import pd8 from '../assets/images/servizi images/primadopo/primadopo8.webp';
 const caroselloImgs = [pd1, pd2, pd3, pd4, pd5, pd6, pd7, pd8];
 
 const googleReviews = [
-  { name: 'Federica B.', location: 'Milano Centro', ago: '2 settimane fa', text: 'Casa impeccabile dopo 3 mesi di lavori. Squadra puntuale e precisa, hanno rimosso ogni traccia di polvere e calce.', rating: 5, img: pd1 },
-  { name: 'Luca M.', location: 'Monza', ago: '1 mese fa', text: 'Professionali e veloci. In un giorno hanno pulito 90 mq di cantiere come se fosse nuovo. Consigliatissimi!', rating: 5, img: pd2 },
-  { name: 'Sara T.', location: 'Sesto San Giovanni', ago: '3 settimane fa', text: 'Ho chiamato alle 9, alle 14 erano già da me. Risultato strepitoso, bagni sanificati perfettamente.', rating: 5, img: pd3 },
-  { name: 'Marco R.', location: 'Cinisello Balsamo', ago: '2 mesi fa', text: 'Prezzo onesto e lavoro eccellente. Nessuna sorpresa in fattura, tutto come concordato.', rating: 5, img: pd4 },
-  { name: 'Giulia P.', location: 'Segrate', ago: '1 settimana fa', text: 'Li uso per ogni ristrutturazione che seguo. I miei clienti restano sempre sorpresi dalla qualità. Top!', rating: 5, img: pd5 },
+  { name: 'Federica B.', location: 'Milano Centro', ago: '2 settimane fa', text: 'Casa impeccabile dopo 3 mesi di lavori. Squadra puntuale e precisa, hanno rimosso ogni traccia di polvere e calce.', rating: 5, img: pd1, avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face' },
+  { name: 'Luca M.', location: 'Monza', ago: '1 mese fa', text: 'Professionali e veloci. In un giorno hanno pulito 90 mq di cantiere come se fosse nuovo. Consigliatissimi!', rating: 5, img: pd2, avatar: null },
+  { name: 'Sara T.', location: 'Sesto San Giovanni', ago: '3 settimane fa', text: 'Ho chiamato alle 9, alle 14 erano già da me. Risultato strepitoso, bagni sanificati perfettamente.', rating: 5, img: pd3, avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=64&h=64&fit=crop&crop=face' },
+  { name: 'Marco R.', location: 'Cinisello Balsamo', ago: '2 mesi fa', text: 'Prezzo onesto e lavoro eccellente. Nessuna sorpresa in fattura, tutto come concordato.', rating: 5, img: pd4, avatar: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=64&h=64&fit=crop' },
+  { name: 'Giulia P.', location: 'Segrate', ago: '1 settimana fa', text: 'Li uso per ogni ristrutturazione che seguo. I miei clienti restano sempre sorpresi dalla qualità. Top!', rating: 5, img: pd5, avatar: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=64&h=64&fit=crop' },
 ];
 
-// BLOCCO 1: Checklist dettagliata
+// BLOCCO 1: Checklist benefit-driven
 const detailedChecklist = [
   {
-    title: 'Aspirazione professionale',
-    description: 'Rimozione della polvere di cantiere usando aspiratori professionali ad alta potenza'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+    ),
+    bg: 'bg-amber-50', border: 'border-amber-100', iconBg: 'bg-amber-100', iconColor: 'text-amber-500',
+    title: 'Niente più starnuti da polvere',
+    description: 'Aspiriamo ogni angolo con macchinari industriali filtranti — anche polveri sottili invisibili che irritano le vie respiratorie e si depositano sui mobili nuovi.',
   },
   {
-    title: 'Sgrassaggio pavimenti',
-    description: 'Pulizia profonda di residui di cemento, calce e sporco su tutti i tipi di pavimentazione'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+    ),
+    bg: 'bg-sky-50', border: 'border-sky-100', iconBg: 'bg-sky-100', iconColor: 'text-sky-500',
+    title: 'Pavimenti pronti subito',
+    description: 'Rimuoviamo calce, cemento e residui incrostati senza rigare le superfici. Parquet, gres, marmo: ogni materiale trattato col prodotto giusto.',
   },
   {
-    title: 'Pulizia infissi e binari',
-    description: 'Sgrassatura e igienizzazione di finestre, porte e binari delle scorrevoli'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+    ),
+    bg: 'bg-emerald-50', border: 'border-emerald-100', iconBg: 'bg-emerald-100', iconColor: 'text-emerald-500',
+    title: 'Casa abitabile dal giorno dopo',
+    description: 'Puliamo infissi, finestre, binari e serrande — così puoi aprire le finestre senza sporcare e iniziare subito a montare i mobili.',
   },
   {
-    title: 'Rimozione colla e silicone',
-    description: 'Eliminazione sicura di residui di colla, silicone e stucco dai pavimenti e dalle pareti'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+    ),
+    bg: 'bg-purple-50', border: 'border-purple-100', iconBg: 'bg-purple-100', iconColor: 'text-purple-500',
+    title: 'Bagni igienizzati al 100%',
+    description: 'Sanitari, fughe, piastrelle e docce con prodotti sanificanti professionali. Zero calcare, zero muffe, zero batteri residui dal cantiere.',
   },
   {
-    title: 'Igienizzazione bagni',
-    description: 'Sanificazione completa di sanitari, piastrelle e zone critiche con prodotti specifici'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+    ),
+    bg: 'bg-rose-50', border: 'border-rose-100', iconBg: 'bg-rose-100', iconColor: 'text-rose-500',
+    title: 'Nessun dettaglio lasciato indietro',
+    description: 'Cornici, battiscopa, porte, maniglie e angoli ciechi: puliamo tutto quello che un\'impresa generica salta. Lo vedi nel risultato finale.',
   },
   {
-    title: 'Pulizia porte, cornici e battiscopa',
-    description: 'Detergenza totale di tutti i dettagli costruttivi e finiture'
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+    ),
+    bg: 'bg-teal-50', border: 'border-teal-100', iconBg: 'bg-teal-100', iconColor: 'text-teal-500',
+    title: 'Prodotti sicuri per tutta la famiglia',
+    description: 'Usiamo detergenti professionali a basso impatto chimico, sicuri anche nelle case con bambini piccoli o animali domestici.',
   },
 ];
 
@@ -128,6 +152,10 @@ const faqs = [
     answer: 'Sì, per edifici di grandi dimensioni o cantieri prolungati, personalizziamo preventivi vantaggiosi. Contattaci per informazioni.'
   },
   {
+    question: 'Avete tariffe dedicate per agenzie immobiliari o ditte edili?',
+    answer: 'Sì. Con agenzie immobiliari, imprese di ristrutturazione e property manager che ci affidano più cantieri nel tempo, costruiamo accordi personalizzati: prezzi riservati, priorità nelle disponibilità e fatturazione semplificata. Scrivici su WhatsApp per parlarne senza impegno.'
+  },
+  {
     question: 'Che garanzie date sul lavoro svolto?',
     answer: 'Se riscontri imperfezioni entro 3 giorni, tornaremo a ritoccare gratis. Vogliamo che tu sia 100% soddisfatto.'
   },
@@ -135,47 +163,67 @@ const faqs = [
 
 const tiers = {
   base: {
-    label: 'Pulizia Base',
-    badge: "L'Essenziale",
+    label: 'Pulizia Essenziale',
+    badge: 'Essenziale',
     badgeColor: 'bg-sky-100 text-sky-700',
+    accentColor: 'sky',
     price: '€ 350',
     originalPrice: '€ 490',
     unit: 'a partire da',
-    subtitle: 'Ideale per imbiancature e rinfrescate. Perfetto se vuoi finire i dettagli da solo.',
+    forWho: 'Per chi ha fatto imbiancatura, piccoli lavori o vuole una pulizia generale rapida.',
+    promise: 'Casa pulita e abitabile — senza andare nel dettaglio millimetrico.',
     bullets: [
-      'Aspirazione meccanica polveri sottili da cantiere',
-      'Primo lavaggio e sgrassatura pavimenti',
-      'Rimozione calcinacci e residui grossolani',
+      { text: 'Casa respirabile subito — aspiriamo polveri fini da ogni superficie' },
+      { text: 'Pavimenti lavabili dal primo giorno — calce e residui rimossi a mano' },
+      { text: 'Niente sporco visibile — via calcinacci, imballaggi e residui grossolani' },
+      { text: 'Bagni utilizzabili — pulizia base di sanitari e piastrelle' },
+      { text: 'Finestre apribili senza rischio sporco — passata su infissi e davanzali' },
     ],
+    notIncluded: ['Rimozione colla e silicone incrostati', 'Sanificazione a vapore', 'Trattamento pavimenti delicati (marmo, parquet)'],
   },
   fondo: {
     label: 'Pulizia a Fondo',
     badge: 'Chiavi in Mano',
     badgeColor: 'bg-emerald-100 text-emerald-700',
+    accentColor: 'emerald',
     price: '€ 550',
     originalPrice: '€ 770',
     unit: 'a partire da',
-    subtitle: 'Ideale per ristrutturazioni totali. Casa igienizzata e pronta per entrarci a piedi nudi.',
+    forWho: 'Per chi ha fatto una ristrutturazione completa e vuole entrare in casa con i piedi nudi.',
+    promise: 'Casa igienizzata al 100% — ogni angolo, ogni fessura, ogni superficie.',
     bullets: [
-      'Pulizia vetri, infissi e rimozione silicone/colle',
-      'Sanificazione a vapore di tutti i bagni',
-      'Trattamento specifico pavimenti (parquet / marmo / gres)',
+      { text: 'Tutto della Pulizia Essenziale — inclusa ogni polvere di cantiere' },
+      { text: 'Colla, silicone e stucco eliminati — superfici lisce come il primo giorno' },
+      { text: 'Bagni sanificati a vapore — zero batteri, zero calcare, zero odori' },
+      { text: 'Vetri e infissi a specchio — pulizia profonda di binari e maniglie' },
+      { text: 'Pavimenti delicati trattati senza rischi — parquet, marmo e gres con prodotti dedicati' },
+      { text: 'Cucina igienizzata completa — piani, elettrodomestici e ante senza traccia di cantiere' },
     ],
+    notIncluded: [],
   },
 };
 
-const pricingRows = [
-  { icon: '🛏️', label: 'Monolocale / Ufficio', sub: 'fino a 45 mq', base: '€ 350', baseOrig: '€ 490', fondo: '€ 550', fondoOrig: '€ 770' },
-  { icon: '🏠', label: 'Bilocale', sub: '50 – 70 mq', base: '€ 480', baseOrig: '€ 670', fondo: '€ 750', fondoOrig: '€ 1.050', highlight: true },
-  { icon: '🏡', label: 'Trilocale', sub: '80 – 100 mq', base: '€ 620', baseOrig: '€ 870', fondo: '€ 980', fondoOrig: '€ 1.370', highlight: true },
-  { icon: '🏰', label: 'Quadrilocale / Villetta', sub: '110 – 140 mq', base: '€ 820', baseOrig: '€ 1.150', fondo: '€ 1.300', fondoOrig: '€ 1.820' },
-];
+const pricingRows = {
+  residenziale: [
+    { icon: '🛏️', label: 'Monolocale', sub: 'fino a 45 mq', base: '€ 350', baseOrig: '€ 490', fondo: '€ 550', fondoOrig: '€ 770' },
+    { icon: '🏠', label: 'Bilocale', sub: '50 – 70 mq', base: '€ 480', baseOrig: '€ 670', fondo: '€ 750', fondoOrig: '€ 1.050', highlight: true },
+    { icon: '🏡', label: 'Trilocale', sub: '80 – 100 mq', base: '€ 620', baseOrig: '€ 870', fondo: '€ 980', fondoOrig: '€ 1.370', highlight: true },
+    { icon: '🏰', label: 'Quadrilocale / Villetta', sub: '110 – 140 mq', base: '€ 820', baseOrig: '€ 1.150', fondo: '€ 1.300', fondoOrig: '€ 1.820' },
+  ],
+  commerciale: [
+    { icon: '💼', label: 'Ufficio small', sub: 'fino a 60 mq', base: '€ 400', baseOrig: '€ 560', fondo: '€ 620', fondoOrig: '€ 870' },
+    { icon: '🏢', label: 'Ufficio medio', sub: '70 – 120 mq', base: '€ 580', baseOrig: '€ 810', fondo: '€ 900', fondoOrig: '€ 1.260', highlight: true },
+    { icon: '🛍️', label: 'Negozio / Showroom', sub: '50 – 150 mq', base: '€ 520', baseOrig: '€ 730', fondo: '€ 850', fondoOrig: '€ 1.190', highlight: true },
+    { icon: '🏗️', label: 'Capannone / Locale grande', sub: 'oltre 150 mq', base: 'Su misura', baseOrig: null, fondo: 'Su misura', fondoOrig: null },
+  ],
+};
 
 export default function PostRistrutturazioneMilano() {
   const [expandedFaq, setExpandedFaq] = useState(null);
   const [activeBeforeAfter, setActiveBeforeAfter] = useState(0);
   const [selectedTier, setSelectedTier] = useState('base');
   const [visible, setVisible] = useState(true);
+  const [pricingCategory, setPricingCategory] = useState('residenziale');
 
   const handleTierChange = (key) => {
     if (key === selectedTier) return;
@@ -234,24 +282,29 @@ export default function PostRistrutturazioneMilano() {
                 </div>
                 {/* Testo overlay in basso */}
                 <div className="absolute bottom-0 left-0 right-0 px-4 py-4">
-                  {/* Stelle */}
-                  <div className="flex gap-0.5 mb-2">
-                    {[...Array(r.rating)].map((_, j) => (
-                      <svg key={j} className="w-3.5 h-3.5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                      </svg>
-                    ))}
-                  </div>
                   {/* Testo recensione */}
-                  <p className="text-white/90 text-xs leading-relaxed line-clamp-2 mb-2">"{r.text}"</p>
-                  {/* Nome + location + tempo */}
+                  <p className="text-white/90 text-xs leading-relaxed line-clamp-2 mb-3">"{r.text}"</p>
+                  {/* Nome + stelle + tempo */}
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-400 to-emerald-400 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">
-                        {r.name[0]}
-                      </div>
+                      {r.avatar ? (
+                        <img src={r.avatar} alt={r.name} className="w-7 h-7 rounded-full object-cover ring-2 ring-white/30 flex-shrink-0" />
+                      ) : (
+                        <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-emerald-400 flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0 ring-2 ring-white/30">
+                          {r.name[0]}
+                        </div>
+                      )}
                       <div>
-                        <p className="text-white font-bold text-xs leading-tight">{r.name}</p>
+                        <div className="flex items-center gap-1.5">
+                          <p className="text-white font-bold text-xs leading-tight">{r.name}</p>
+                          <div className="flex gap-0.5">
+                            {[...Array(r.rating)].map((_, j) => (
+                              <svg key={j} className="w-2.5 h-2.5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                              </svg>
+                            ))}
+                          </div>
+                        </div>
                         <p className="text-white/60 text-[10px] leading-tight">📍 {r.location}</p>
                       </div>
                     </div>
@@ -270,23 +323,45 @@ export default function PostRistrutturazioneMilano() {
 
           {/* Titolo */}
           <div className="mb-6">
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight leading-snug mb-4 text-gray-900">
+            <h1 className="text-[1.6em] sm:text-4xl font-bold tracking-[-0.06em] leading-snug mb-4 text-gray-900">
               <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
                 Pulizie Post Ristrutturazione a Milano
               </span>{' '}
-              e Provincia
+              e Provincia - entro 24 ore
             </h1>
+            <p className="text-sm text-gray-400 font-medium tracking-wide">
+              <svg className="inline w-4 h-4 text-emerald-500 mr-1 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{display:'inline'}}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              Garanzia 100% soddisfatti:{' '}
+              <span className="text-gray-800 font-bold">ritorniamo gratis entro 3 giorni.</span>*
+            </p>
           </div>
 
-          {/* Badge disponibilità immediata */}
-          <div className="mb-5 flex flex-col items-center gap-2">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-2">
-              <span className="relative flex h-2.5 w-2.5">
+          {/* Badge – Pronto Intervento */}
+          <div className="mb-6 flex flex-col items-center gap-3">
+
+            {/* Badge principale */}
+            <div className="inline-flex items-center gap-2.5 bg-white border border-emerald-200 shadow-md shadow-emerald-50 rounded-2xl px-4 py-2.5">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-bold text-emerald-700">Disponibilità immediata</span>
+              <span className="text-gray-500 font-medium text-md tracking-[-0.07em]">
+                Prima disponibilità:
+              </span>
+              <span className="w-px h-4 bg-gray-200 shrink-0" />
+              <span className="flex items-center gap-1 bg-emerald-500/50 text-white text-md tracking-[-0.07em] font-medium px-2.5 py-1 rounded-full leading-none">
+                 {(() => {
+                  const d = new Date();
+                  d.setDate(d.getDate() + 1);
+                  const giorno = d.toLocaleDateString('it-IT', { weekday: 'long' }).slice(0, 3);
+                  const data = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long' });
+                  return giorno + ' ' + data;
+                })()}
+              </span>
             </div>
+
           </div>
 
           {/* Freccia + label */}
@@ -299,20 +374,23 @@ export default function PostRistrutturazioneMilano() {
             </svg>
           </div>
 
-          {/* Toggle Tier */}
-          <div className="flex mt-2 mb-6 gap-2">
+          {/* Toggle Tier – segmented control */}
+          <div className="mt-2 mb-6 bg-gray-100 rounded-2xl p-1 flex relative">
+            {/* Slider indicator */}
+            <div
+              className="absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-xl bg-white shadow-sm transition-transform duration-300 ease-in-out"
+              style={{ transform: selectedTier === 'fondo' ? 'translateX(calc(100% + 8px))' : 'translateX(0)' }}
+            />
             {Object.entries(tiers).map(([key, t]) => (
               <button
                 key={key}
                 onClick={() => handleTierChange(key)}
-                className={`relative flex-1 py-3 rounded-xl text-sm font-bold border-2 transition-all duration-200 ${
-                  selectedTier === key
-                    ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-                    : 'border-gray-200 bg-white text-gray-400 hover:border-gray-300 hover:text-gray-600'
+                className={`relative flex-1 py-2.5 z-10 text-sm font-bold rounded-xl transition-colors duration-200 ${
+                  selectedTier === key ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'
                 }`}
               >
                 {key === 'fondo' && (
-                  <span className="absolute -top-2 -right-1.5 bg-amber-400 text-amber-900 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full leading-none">
+                  <span className="absolute -top-2 -right-1 bg-amber-400 text-amber-900 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-full leading-none">
                     PRO
                   </span>
                 )}
@@ -321,7 +399,7 @@ export default function PostRistrutturazioneMilano() {
             ))}
           </div>
 
-          {/* Card Visiva – una sola alla volta, con fade */}
+          {/* Card Pacchetto – redesign premium */}
           <div
             style={{
               opacity: visible ? 1 : 0,
@@ -331,39 +409,85 @@ export default function PostRistrutturazioneMilano() {
           >
             {(() => {
               const t = tiers[selectedTier];
+              const isFondo = selectedTier === 'fondo';
               return (
-                <>
-                  <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 mb-3">
+                <div className={`rounded-2xl border-2 overflow-hidden ${isFondo ? 'border-emerald-300' : 'border-sky-200'}`}>
+
+                  {/* Header card con immagine */}
+                  <div className="relative h-56 overflow-hidden">
                     <img
                       src={selectedTier === 'base' ? imgBase : imgFondo}
-                      alt={t.badge}
-                      className="w-full h-44 object-cover"
+                      alt={t.label}
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-2 left-2">
-                      <span className={`text-[10px] font-bold px-2 py-1 rounded-md ${t.badgeColor}`}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    {/* Badge pacchetto */}
+                    <div className="absolute top-3 left-3">
+                      <span className={`text-[11px] font-black px-3 py-1 rounded-full ${t.badgeColor}`}>
                         {t.badge}
                       </span>
                     </div>
-                    <div className="absolute top-2 right-2">
-                      <div className="bg-emerald-600 rounded-md px-2 py-1 text-right">
-                        <div className="text-[9px] font-semibold uppercase tracking-wide leading-none mb-1 text-emerald-200">{t.unit}</div>
-                        <div className="text-base font-bold text-red-300 line-through leading-none mb-0.5">{t.originalPrice}</div>
-                        <div className="text-2xl font-bold text-white leading-none">{t.price}</div>
+                    {/* Prezzo in alto a destra */}
+                    <div className="absolute top-3 right-3">
+                      <div className={`rounded-xl px-3 py-1.5 text-right ${isFondo ? 'bg-emerald-600' : 'bg-sky-600'}`}>
+                        <div className="text-[9px] font-semibold uppercase tracking-wide leading-none mb-0.5 text-white/70">{t.unit}</div>
+                        <div className="text-xs font-bold text-red-300 line-through leading-none">{t.originalPrice}</div>
+                        <div className="text-xl font-black text-white leading-none">{t.price}</div>
                       </div>
                     </div>
+                    {/* Nome pacchetto in basso sull'immagine */}
+                    <div className="absolute bottom-3 left-3">
+                      <h3 className="text-white font-black text-lg leading-none">{t.label}</h3>
+                    </div>
                   </div>
-                  <p className="text-xs text-gray-500 mb-3 leading-snug">{t.subtitle}</p>
-                  <ul className="text-left space-y-1.5 mb-4">
-                    {t.bullets.map((b, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                        <svg className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
-                        </svg>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
+
+                  {/* Body card */}
+                  <div className={`p-4 ${isFondo ? 'bg-emerald-50/50' : 'bg-sky-50/40'}`}>
+
+                    {/* Per chi è */}
+                    <div className={`mb-4 rounded-xl px-3 py-2.5 border ${isFondo ? 'bg-emerald-50 border-emerald-200' : 'bg-sky-50 border-sky-200'}`}>
+                      <p className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isFondo ? 'text-emerald-600' : 'text-sky-600'}`}>👤 Ideale per</p>
+                      <p className="text-xs text-gray-700 leading-snug font-medium">{t.forWho}</p>
+                    </div>
+
+                    {/* Promessa */}
+                    <p className="text-[11px] text-gray-500 italic mb-3 leading-snug">
+                      💬 "{t.promise}"
+                    </p>
+
+                    {/* Lista inclusi */}
+                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">✅ Cosa è incluso</p>
+                    <ul className="space-y-2 mb-3">
+                      {t.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2.5">
+                          <svg className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                          </svg>
+                          <span className="text-sm text-gray-700 leading-snug">{b.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Non incluso (solo per Base) */}
+                    {t.notIncluded.length > 0 && (
+                      <div className="mt-3 pt-3 border-t border-gray-200">
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-300 mb-2">❌ Non incluso</p>
+                        <ul className="space-y-1">
+                          {t.notIncluded.map((item, i) => (
+                            <li key={i} className="flex items-center gap-2 text-xs text-gray-400">
+                              <span className="w-3 h-px bg-gray-300 shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-2 text-[11px] text-sky-600 font-semibold">
+                          → Vuoi tutto incluso? Scegli <button onClick={() => handleTierChange('fondo')} className="underline font-bold">Pulizia a Fondo</button>
+                        </p>
+                      </div>
+                    )}
+
+                  </div>
+                </div>
               );
             })()}
           </div>
@@ -373,11 +497,33 @@ export default function PostRistrutturazioneMilano() {
             <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-3 text-center">
               Listino prezzi · Milano · immobile vuoto
             </p>
+
+            {/* Tab switcher Residenziale / Commerciale */}
+            <div className="flex rounded-xl border border-gray-200 overflow-hidden mb-3 text-xs font-bold">
+              {[
+                { key: 'residenziale', label: '🏠 Residenziale' },
+                { key: 'commerciale', label: '🏢 Commerciale' },
+              ].map(({ key, label }) => (
+                <button
+                  key={key}
+                  onClick={() => setPricingCategory(key)}
+                  className={`flex-1 py-2 transition-colors ${
+                    pricingCategory === key
+                      ? 'bg-gray-900 text-white'
+                      : 'bg-white text-gray-500 hover:bg-gray-50'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
             <div className="space-y-2">
-              {pricingRows.map((row, i) => {
+              {pricingRows[pricingCategory].map((row, i) => {
                 const activePrice = selectedTier === 'base' ? row.base : row.fondo;
                 const origPrice = selectedTier === 'base' ? row.baseOrig : row.fondoOrig;
                 const isHighlight = row.highlight;
+                const isSuMisura = activePrice === 'Su misura';
                 return (
                   <div
                     key={i}
@@ -395,13 +541,22 @@ export default function PostRistrutturazioneMilano() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-[9px] text-gray-400 font-medium mb-0.5">a partire da</div>
-                      <div className="text-sm font-bold text-red-500 line-through leading-none mb-0.5">{origPrice}</div>
-                      <div className={`text-lg font-black ${isHighlight ? 'text-emerald-600' : 'text-gray-800'}`}>
-                        {activePrice}
-                      </div>
-                      {isHighlight && (
-                        <div className="text-[9px] text-emerald-500 font-semibold">Più richiesto</div>
+                      {isSuMisura ? (
+                        <div>
+                          <div className="text-sm font-black text-gray-700">Su misura</div>
+                          <div className="text-[9px] text-gray-400">preventivo gratuito</div>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="text-[9px] text-gray-400 font-medium mb-0.5">a partire da</div>
+                          {origPrice && <div className="text-sm font-bold text-red-500 line-through leading-none mb-0.5">{origPrice}</div>}
+                          <div className={`text-lg font-black ${isHighlight ? 'text-emerald-600' : 'text-gray-800'}`}>
+                            {activePrice}
+                          </div>
+                          {isHighlight && (
+                            <div className="text-[9px] text-emerald-500 font-semibold">Più richiesto</div>
+                          )}
+                        </>
                       )}
                     </div>
                   </div>
@@ -415,6 +570,15 @@ export default function PostRistrutturazioneMilano() {
 
           {/* CTA */}
           <div className="mt-6 mb-8 flex flex-col gap-3">
+            {/* Micro-banner garanzia */}
+            <div className="flex items-center justify-center gap-2 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2.5">
+              <svg className="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <p className="text-xs text-emerald-800 font-semibold">
+                Non sei soddisfatto? <strong>Ritorniamo gratis entro 3 giorni.</strong>
+              </p>
+            </div>
             <a
               href="https://wa.me/393342221212?text=Ciao,%20vorrei%20un%20preventivo%20per%20pulizia%20post%20ristrutturazione%20a%20Milano."
               target="_blank"
@@ -461,30 +625,47 @@ export default function PostRistrutturazioneMilano() {
       </section>
 
       {/* BLOCCO CHECKLIST SERVIZI */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
-        <div className="container-custom max-w-2xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span className="inline-block bg-blue-50 text-blue-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-              Cosa è incluso
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="container-custom max-w-3xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-emerald-50 text-emerald-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+              Perché sceglierci
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
-              Ogni intervento comprende
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight mb-3">
+              Cosa cambia davvero dopo il nostro intervento
             </h2>
+            <p className="text-gray-500 text-sm max-w-md mx-auto">
+              Non vendiamo solo "pulizia". Ti consegniamo una casa in cui puoi entrare subito — senza starnuti, senza problemi, senza rimpianti.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {detailedChecklist.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm">
-                <div className="mt-0.5 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
-                  </svg>
+              <div key={i} className={`flex items-start gap-4 border rounded-2xl px-5 py-4 shadow-sm ${item.bg} ${item.border}`}>
+                <div className={`mt-0.5 w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${item.iconBg} ${item.iconColor}`}>
+                  {item.icon}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800 leading-tight">{item.title}</p>
-                  <p className="text-[11px] text-gray-400 leading-snug mt-0.5">{item.description}</p>
+                  <p className="text-sm font-bold text-gray-900 leading-tight mb-1">{item.title}</p>
+                  <p className="text-xs text-gray-500 leading-snug">{item.description}</p>
                 </div>
               </div>
             ))}
+          </div>
+          {/* Banner garanzia */}
+          <div className="mt-8 bg-gray-950 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="text-3xl flex-shrink-0">🛡️</div>
+            <div className="flex-1">
+              <p className="text-white font-bold text-sm mb-0.5">Garanzia soddisfazione 3 giorni</p>
+              <p className="text-gray-400 text-xs">Se entro 3 giorni trovi qualcosa che non va, torniamo a ritoccare gratis. Senza discussioni.</p>
+            </div>
+            <a
+              href="https://wa.me/393342221212?text=Ciao,%20vorrei%20un%20preventivo%20per%20pulizia%20post%20ristrutturazione."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-colors whitespace-nowrap"
+            >
+              Prenota ora →
+            </a>
           </div>
         </div>
       </section>
@@ -493,10 +674,10 @@ export default function PostRistrutturazioneMilano() {
       <section className="py-14 bg-white border-t border-gray-100 overflow-hidden">
         <div className="container-custom max-w-2xl mx-auto px-6 mb-8 text-center">
           <span className="inline-block bg-gray-100 text-gray-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-            I nostri cantieri
+          Consegnato su una media di 1-2 giorni
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-            Lavori recenti su Milano e provincia
+            Lavori su Milano e provincia
           </h2>
         </div>
         <div className="overflow-hidden">
@@ -522,34 +703,128 @@ export default function PostRistrutturazioneMilano() {
         </div>
       </section>
 
-      {/* BLOCCO 3: Processo in 3 Step */}
-      <section className="py-16 bg-white border-t border-gray-200">
-        <div className="container-custom max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
-            Come funziona
-          </h2>
-          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
-            Tre semplici step per avere la casa pulita dopo la ristrutturazione
-          </p>
+      {/* BLOCCO 3: Come Funziona – redesign premium */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6">
 
+          {/* Header */}
+          <div className="text-center mb-14">
+            <span className="inline-block bg-blue-50 text-blue-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+              Il nostro processo
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 leading-tight">
+              Da cantiere sporco a casa{' '}
+              <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
+                pronta in 3 passi
+              </span>
+            </h2>
+            <p className="text-gray-400 text-base max-w-xl mx-auto">
+              Semplice, veloce, senza sorprese. Ecco come lavoriamo.
+            </p>
+          </div>
+
+          {/* Steps */}
           <div className="relative">
-            {/* Linea di connessione (solo desktop) */}
-            <div className="hidden sm:block absolute top-16 left-12 right-12 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative z-10">
-              {processSteps.map((step, i) => (
-                <div key={i} className="relative">
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center h-16 w-16 bg-blue-600 text-white rounded-full text-2xl font-bold shadow-lg border-4 border-white">
-                    {step.step}
+            {/* Linea verticale mobile */}
+            <div className="sm:hidden absolute left-8 top-10 bottom-10 w-0.5 bg-gradient-to-b from-blue-200 via-emerald-200 to-blue-200" />
+            {/* Linea orizzontale desktop */}
+            <div className="hidden sm:block absolute top-10 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-0.5 bg-gradient-to-r from-blue-200 via-emerald-200 to-blue-200" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+
+              {/* STEP 1 */}
+              <div className="relative flex sm:flex-col items-start sm:items-center gap-5 sm:gap-0 sm:text-center">
+                {/* Numero */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-200 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
                   </div>
-                  <div className="bg-gray-50 rounded-xl p-6 pt-14 text-center border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all">
-                    <h3 className="font-bold text-gray-900 mb-2 text-lg">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-white border-2 border-blue-500 flex items-center justify-center">
+                    <span className="text-blue-600 font-black text-[10px]">1</span>
                   </div>
                 </div>
-              ))}
+                {/* Contenuto */}
+                <div className="sm:mt-5">
+                  <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 sm:mb-3">
+                    ⚡ Risposta in 1h
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-1.5 leading-snug">Contattaci</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Scrivi su WhatsApp o chiama. Descrivi brevemente i lavori fatti — risponderemo entro un'ora con una stima indicativa.
+                  </p>
+                </div>
+              </div>
+
+              {/* STEP 2 */}
+              <div className="relative flex sm:flex-col items-start sm:items-center gap-5 sm:gap-0 sm:text-center">
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-200 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-white border-2 border-emerald-500 flex items-center justify-center">
+                    <span className="text-emerald-600 font-black text-[10px]">2</span>
+                  </div>
+                </div>
+                <div className="sm:mt-5">
+                  <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 sm:mb-3">
+                    🆓 Gratis
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-1.5 leading-snug">Foto o sopralluogo</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    Mandaci foto del cantiere via WhatsApp oppure veniamo noi da te gratuitamente. Preventivo chiaro e definitivo, senza sorprese.
+                  </p>
+                </div>
+              </div>
+
+              {/* STEP 3 */}
+              <div className="relative flex sm:flex-col items-start sm:items-center gap-5 sm:gap-0 sm:text-center">
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 shadow-lg shadow-sky-200 flex items-center justify-center">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-white border-2 border-sky-500 flex items-center justify-center">
+                    <span className="text-sky-600 font-black text-[10px]">3</span>
+                  </div>
+                </div>
+                <div className="sm:mt-5">
+                  <div className="inline-flex items-center gap-1.5 bg-sky-50 text-sky-600 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 sm:mb-3">
+                    🚀 24–48h
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-lg mb-1.5 leading-snug">Squadra al lavoro</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    La nostra squadra arriva entro 24–48 ore e lascia la tua casa impeccabile. Pulizia completa, pronta per i mobili.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
+
+          {/* CTA banner sotto */}
+          <div className="mt-12 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg shadow-blue-100">
+            <div>
+              <p className="text-white font-bold text-base sm:text-lg leading-snug">Pronto a iniziare?</p>
+              <p className="text-white/70 text-sm mt-0.5">Sopralluogo gratuito · Nessun obbligo</p>
+            </div>
+            <a
+              href="https://wa.me/393342221212?text=Ciao,%20vorrei%20un%20preventivo%20per%20pulizia%20post%20ristrutturazione%20a%20Milano."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 bg-white text-blue-600 font-bold px-6 py-3 rounded-xl text-sm shadow hover:shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.031-1.385l-.36-.214-3.733.914.932-3.64-.235-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+              Inizia ora su WhatsApp
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -719,32 +994,45 @@ export default function PostRistrutturazioneMilano() {
           </div>
 
           <p className="text-blue-200 text-xs mt-5">
-            🔒 Nessun impegno · Preventivo gratuito · Promo estate -20% fino al 30 luglio
+             Nessun impegno · Preventivo gratuito · Promo estate -20% fino al 30 luglio
           </p>
         </div>
       </section>
 
       {/* FLOATING FOOTER MOBILE */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white border-t border-gray-200 shadow-2xl px-4 py-3 flex items-center gap-3">
-        <a
-          href="https://wa.me/393342221212?text=Ciao,%20vorrei%20un%20preventivo%20per%20pulizia%20post%20ristrutturazione%20a%20Milano."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 bg-[#25D366] text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-2 shadow-md"
-        >
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.031-1.385l-.36-.214-3.733.914.932-3.64-.235-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-          Preventivo su WhatsApp
-        </a>
-        <div className="text-right shrink-0">
-          <p className="text-[10px] text-gray-400 leading-tight">Nessun obbligo</p>
-          <p className="text-[10px] text-gray-400 leading-tight">di acquisto</p>
+      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white border-t border-gray-200 shadow-2xl px-3 pt-2.5 pb-3">
+        <div className="flex items-center gap-2 mb-1.5">
+          <a
+            href="https://wa.me/393342221212?text=Ciao,%20vorrei%20un%20preventivo%20per%20pulizia%20post%20ristrutturazione%20a%20Milano."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 bg-[#25D366] text-white font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-1.5 shadow-md"
+          >
+            <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.857L.057 23.882a.5.5 0 00.61.61l6.025-1.475A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.031-1.385l-.36-.214-3.733.914.932-3.64-.235-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            WhatsApp
+          </a>
+          <a
+            href="tel:+393342221212"
+            className="flex-1 border-2 border-gray-200 text-gray-700 font-bold py-3 rounded-xl text-sm flex items-center justify-center gap-1.5"
+          >
+            <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 17v3a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Chiama
+          </a>
         </div>
+        <p className="text-center text-[10px] text-gray-400">Preventivo gratis · nessun impegno</p>
       </div>
 
       {/* Spacer per floating bar su mobile */}
       <div className="h-20 sm:hidden" />
 
       <Footer />
+
+      {/* NOTE LEGALI GARANZIA */}
+      <div className="bg-gray-50 border-t border-gray-100 py-5 px-6">
+        <p className="max-w-2xl mx-auto text-[10px] text-gray-400 leading-relaxed text-center">
+          * La garanzia di ritorno gratuito entro 3 giorni si applica in presenza di motivi oggettivi e verificabili: aree non pulite concordate nel preventivo, presenza evidente di polvere di cantiere rimasta su superfici accessibili, sanitari o pavimenti non trattati. Non copre situazioni causate da interventi successivi al nostro lavoro (es. ulteriori lavori edili, trasporto mobili), sporco ricomparso per cause esterne, o aspettative non comunicate in fase di sopralluogo. In caso di contestazione, valutiamo insieme il problema e troviamo sempre una soluzione ragionevole.
+        </p>
+      </div>
     </div>
   );
 }

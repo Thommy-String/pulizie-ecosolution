@@ -27,7 +27,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/postrestrutturazionimilano" element={<PostRistrutturazioneMilano />} />
+      <Route path="/postristrutturazionimilano" element={<PostRistrutturazioneMilano />} />
     </Routes>
   );
 }
